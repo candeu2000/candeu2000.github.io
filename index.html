@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lanzador de Dados RPG Pro</title>
+  
+  <!-- v4.16: Manifiesto PWA incrustado (para Android) -->
+  <!-- Define el nombre, el inicio y los iconos PNG (codificados en el SVG Base64) -->
+  <link rel="manifest" href='data:application/manifest+json,{
+    "name": "Lanzador RPG Pro",
+    "short_name": "Dados RPG",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#1c2530",
+    "theme_color": "#1c2530",
+    "icons": [
+      {
+        "src": "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJvaUUtXHdpZHRoPSIxIi8+PC9zdmc+",
+        "sizes": "192x192",
+        "type": "image/svg+xml"
+      },
+      {
+        "src": "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJvaUUtXHdpZHRoPSIxIi8+PC9zdmc+",
+        "sizes": "512x512",
+        "type": "image/svg+xml"
+      }
+    ]
+  }'>
+  
+  <!-- Icono para "Añadir a pantalla de inicio" en iOS (fallback para Android) -->
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJvaUUtXHdpZHRoPSIxIi8+PC9zdmc+">
+  
+  <!-- Meta tags PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1c2530">
+
+  <!-- 1. Cargar Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- 2. Cargar React y Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <!-- 3. Cargar Firebase (Versión 9 compatible) -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+  <style>
+    /* Estilo base para el fondo */
+    body {
+      background-color: #1c2530; /* Color oscuro por defecto */
+    }
+    .perspective-800 {
+      perspective: 800px;
+    }
+    /* Clases personalizadas para Tailwind */
+    .dice-label-sub {
+      font-size: 0.7rem;
+      font-weight: 800;
+      vertical-align: sub;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contenedor donde React montará la aplicación -->
+  <div id="root"></div>
+
+  <!-- 4. Nuestro Código de la Aplicación (v4.18 - Auto-Scroll CORREGIDO) -->
+  <script type="text/babel">
+    /**
+     * Lanzador de Dados RPG Personalizable v4.18 (Auto-Scroll Corregido)
+     *
+     * CAMBIOS CLAVE:
+     * 1.  CORREGIDO: El Auto-scroll (v4.17) ahora se ejecuta INMEDIATAMENTE
+     * al pulsar "Lanzar", en lugar de esperar al final de la animación.
+     * 2.  MEJORADO: El scroll ahora usa `block: 'center'` para centrar
+     * la sección de resultados en la pantalla.
+     *
+     * Mantiene todas las características:
+     * - Clonación Total (D4-D20) con personalización limitada en D12/D20.
+     * - Colores variantes, Animación 3D, Sonido "Casino" (v3.7).
+     * - Carga de imágenes locales (Base64) y URLs/Emojis.
+     * - Guardado en Firestore y Narrador IA (Gemini).
+     * - (Claves de Firebase insertadas por el usuario).
+     */
+
+    // Asignar desde los scripts cargados
+    const { useState, useEffect, useRef, useCallback, useMemo } = React;
+
+    // --- Constantes de Configuración ---
+    const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=`;
+    const SHAKE_THRESHOLD = 25; 
+    const ROLL_DURATION = 1500; 
+    const DEBOUNCE_TIME = 300; 
+    const FIRESTORE_COLLECTION = 'dice-roller-sets';
+    const MAX_DICE_PER_TYPE = 20;
+
+    // --- Lista de Tipos de Dados (Clonados TODOS) ---
+    const DICE_TYPES = [
+      'D4_1', 'D6_1', 'D8_1', 'D10_1', 'D12_1', 'D20_1',
+      'D4_2', 'D6_2', 'D8_2', 'D10_2', 'D12_2', 'D20_2'
+    ];
+
+    // --- Paleta de Colores por Dado (Clones con variantes) ---
+    const DICE_COLORS = {
+      // D4 (Rojos)
+      D4_1: { light: '#f8d7da', mid: '#f1aeb5', dark: '#b85c6c' }, // Rojo Suave
+      D4_2: { light: '#dc3545', mid: '#c82333', dark: '#a71d2a' }, // Rojo Vivo
+      // D6 (Azules)
+      D6_1: { light: '#cce5ff', mid: '#99caff', dark: '#007bff' }, // Azul Claro
+      D6_2: { light: '#007bff', mid: '#0056b3', dark: '#003e7f' }, // Azul Oscuro
+      // D8 (Verdes)
+      D8_1: { light: '#d4edda', mid: '#a3d9b1', dark: '#28a745' }, // Verde Menta
+      D8_2: { light: '#28a745', mid: '#1e7e34', dark: '#155724' }, // Verde Bosque
+      // D10 (Naranjas)
+      D10_1: { light: '#ffe0b2', mid: '#ffb74d', dark: '#f57c00' }, // Naranja Suave
+      D10_2: { light: '#fd7e14', mid: '#e36209', dark: '#cb5408' }, // Naranja Calabaza
+      // D12 (Amarillos)
+      D12_1: { light: '#fff3cd', mid: '#ffe8a1', dark: '#ffc107' }, // Amarillo Pastel
+      D12_2: { light: '#ffc107', mid: '#e0a800', dark: '#c29400' }, // Amarillo Sol
+      // D20 (Morados)
+      D20_1: { light: '#e2d9f3', mid: '#c0b6e3', dark: '#6f42c1' }, // Lila
+      D20_2: { light: '#6f42c1', mid: '#563d7e', dark: '#3c2957' }, // Morado Profundo
+    };
+
+    // --- Iconos de Dados Poliedrales (Sin cambios, usamos D4, D6, etc.) ---
+    const POLYHEDRAL_ICONS = {
+      D4: (props) => (
+        <svg {...props} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 4L58 48L6 48L32 4Z" fill="var(--dice-color-light)" stroke="#111" strokeWidth="1"/>
+          <path d="M32 4L6 48L32 59L32 4Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+          <path d="M32 4L58 48L32 59L32 4Z" fill="var(--dice-color-dark)" stroke="#111" strokeWidth="1"/>
+          <path d="M6 48L58 48L32 59L6 48Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+        </svg>
+      ),
+      D6: (props) => (
+        <svg {...props} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 12 L12 22 L32 32 L52 22 L32 12 Z" fill="var(--dice-color-light)" stroke="#111" strokeWidth="1"/>
+          <path d="M12 22 L12 42 L32 52 L32 32 L12 22 Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+          <path d="M32 32 L32 52 L52 42 L52 22 L32 32 Z" fill="var(--dice-color-dark)" stroke="#111" strokeWidth="1"/>
+        </svg>
+      ),
+      D8: (props) => (
+        <svg {...props} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 4L58 28L32 60L6 28L32 4Z" fill="var(--dice-color-light)" stroke="#111" strokeWidth="1"/>
+          <path d="M32 4L6 28L32 36L32 4Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+          <path d="M32 4L58 28L32 36L32 4Z" fill="var(--dice-color-dark)" stroke="#111" strokeWidth="1"/>
+          <path d="M6 28L32 60L32 36L6 28Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+          <path d="M58 28L32 60L32 36L58 28Z" fill="var(--dice-color-dark)" stroke="#111" strokeWidth="1"/>
+        </svg>
+      ),
+      D10: (props) => (
+        <svg {...props} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 4L52 24L32 32L12 24L32 4Z" fill="var(--dice-color-light)" stroke="#111" strokeWidth="1"/>
+          <path d="M12 24L32 32L32 60L12 40L12 24Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+          <path d="M52 24L32 32L32 60L52 40L52 24Z" fill="var(--dice-color-dark)" stroke="#111" strokeWidth="1"/>
+        </svg>
+      ),
+      D12: (props) => (
+        <svg {...props} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 8 L50 20 L40 40 L24 40 L14 20 L32 8 Z" fill="var(--dice-color-light)" stroke="#111" strokeWidth="1"/>
+          <path d="M14 20 L24 40 L10 52 L4 36 L14 20 Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+          <path d="M50 20 L60 36 L46 52 L40 40 L50 20 Z" fill="var(--dice-color-dark)" stroke="#111" strokeWidth="1"/>
+          <path d="M24 40 L10 52 L28 60 L40 40 Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+          <path d="M40 40 L28 60 L46 52 L40 40 Z" fill="var(--dice-color-dark)" stroke="#111" strokeWidth="1"/>
+        </svg>
+      ),
+      D20: (props) => (
+        <svg {...props} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M32 4L52 16L62 38L42 56L22 56L4 38L12 16L32 4Z" fill="var(--dice-color-light)" stroke="#111" strokeWidth="1"/>
+          <path d="M32 4L52 16L32 24L12 16L32 4Z" fill="var(--dice-color-light)" stroke="#111" strokeWidth="1"/>
+          <path d="M52 16L62 38L42 28L32 24L52 16Z" fill="var(--dice-color-dark)" stroke="#111" strokeWidth="1"/>
+          <path d="M12 16L4 38L22 28L32 24L12 16Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+          <path d="M4 38L22 56L32 46L22 28L4 38Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+          <path d="M62 38L42 56L32 46L42 28L62 38Z" fill="var(--dice-color-dark)" stroke="#111" strokeWidth="1"/>
+          <path d="M22 56L42 56L32 46L22 56Z" fill="var(--dice-color-mid)" stroke="#111" strokeWidth="1"/>
+        </svg>
+      ),
+    };
+
+
+    // --- Configuración de Firebase (Versión 9 COMPATIBLE) ---
+    let db, auth;
+    let isFirebaseInitialized = false;
+    let appId, initialAuthToken; 
+    let firebaseInitializationError = null; 
+
+    try {
+      // --- BLOQUE DE CLAVES (ACTUALIZADO POR EL USUARIO) ---
+      const firebaseConfig = {
+        apiKey: "AIzaSyCbDM09x4wUjBbatzrg0dEXcI2sXcAixa4",
+        authDomain: "lanzador-de-dados-app.firebaseapp.com",
+        projectId: "lanzador-de-dados-app",
+        storageBucket: "lanzador-de-dados-app.firebasestorage.app",
+        messagingSenderId: "743613493091",
+        appId: "1:743613493091:web:c121942099e9c1a577ad56",
+        measurementId: "G-Y0GVZQ16TW"
+      };
+      // -----------------------------------------
+
+      appId = firebaseConfig.projectId; 
+      initialAuthToken = null; // Usaremos inicio anónimo
+
+      // Chequeo de errores
+      if (typeof firebase === 'undefined') {
+          console.error("[FIREBASE] El script de Firebase (firebase-app-compat.js) no se ha cargado. Verifica la conexión o bloqueadores.");
+          firebaseInitializationError = "SCRIPT_FAIL"; 
+          isFirebaseInitialized = false;
+      } else if (!firebaseConfig || !firebaseConfig.apiKey || firebaseConfig.apiKey.includes("TU_API_KEY")) {
+          // Este chequeo ya no debería fallar
+          console.error("[FIREBASE] 'firebaseConfig' no encontrado o no actualizado.");
+          firebaseInitializationError = "CONFIG_FAIL"; 
+          isFirebaseInitialized = false;
+      } else {
+          // Si todo va bien:
+          const app = firebase.initializeApp(firebaseConfig);
+          auth = firebase.auth(app);
+          db = firebase.firestore(app);
+          isFirebaseInitialized = true;
+          console.log("[FIREBASE] Inicialización (compatible) exitosa.");
+      }
+
+    } catch (error) {
+      console.error("[FIREBASE] Error durante la inicialización de Firebase.", error);
+      isFirebaseInitialized = false;
+      firebaseInitializationError = error.message; 
+    }
+
+    // --- Funciones de Utilidad ---
+
+    /**
+     * Sonido "Casino" (v3.7): Ruido Blanco + Tono Grave
+     */
+    function playHitSound(audioContext, startTime, volume, pitch) {
+      const now = startTime;
+      const totalDuration = 0.15; 
+
+      const thudOsc = audioContext.createOscillator();
+      thudOsc.type = 'sine';
+      thudOsc.frequency.setValueAtTime(pitch, now);
+      const thudGain = audioContext.createGain();
+      thudGain.gain.setValueAtTime(volume * 0.5, now);
+      thudGain.gain.exponentialRampToValueAtTime(0.01, now + totalDuration);
+      thudOsc.connect(thudGain).connect(audioContext.destination);
+
+      const noiseBuffer = audioContext.createBuffer(1, audioContext.sampleRate * 0.1, audioContext.sampleRate);
+      const output = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < output.length; i++) {
+        output[i] = Math.random() * 2 - 1;
+      }
+      const noiseSource = audioContext.createBufferSource();
+      noiseSource.buffer = noiseBuffer;
+
+      const noiseFilter = audioContext.createBiquadFilter();
+      noiseFilter.type = 'lowpass';
+      noiseFilter.frequency.setValueAtTime(1500 + Math.random() * 500, now);
+      noiseFilter.Q.setValueAtTime(12 + Math.random() * 5, now); 
+
+      const noiseGain = audioContext.createGain();
+      noiseGain.gain.setValueAtTime(volume * 0.8, now);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, now + totalDuration * 0.3);
+
+      noiseSource.connect(noiseGain).connect(noiseFilter).connect(audioContext.destination);
+
+      thudOsc.start(now);
+      noiseSource.start(now);
+      thudOsc.stop(now + totalDuration);
+      noiseSource.stop(now + 0.1);
+    }
+
+    /**
+     * Sonido "Repiqueteo de Rebotes" (v3.5)
+     */
+    function playRollSound() {
+      try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        if (!audioContext) return;
+        const now = audioContext.currentTime;
+        
+        playHitSound(audioContext, now + 0.0,    0.8, 120 + Math.random() * 20);
+        playHitSound(audioContext, now + 0.3,    0.5, 130 + Math.random() * 20);
+        playHitSound(audioContext, now + 0.55,   0.4, 110 + Math.random() * 20);
+        playHitSound(audioContext, now + 0.8,    0.3, 125 + Math.random() * 20);
+        playHitSound(audioContext, now + 1.1,    0.2, 115 + Math.random() * 20);
+      
+      } catch (e) {
+        console.warn("Web Audio API no es soportada o falló.", e);
+      }
+    }
+
+
+    /**
+     * Lanza un dado y devuelve el resultado.
+     */
+    const rollDie = (type) => {
+      const baseType = type.split('_')[0]; // D10_1 -> D10
+      const sides = parseInt(baseType.substring(1)); // D10 -> 10
+      if (sides === 10) {
+        return Math.floor(Math.random() * 10); // D10 es 0-9
+      }
+      return Math.floor(Math.random() * sides) + 1;
+    }
+
+    /**
+     * Hook personalizado para un debounce simple.
+     */
+    const useDebounce = (callback, delay) => {
+      const timer = useRef(null);
+      return (...args) => {
+        if (timer.current) clearTimeout(timer.current);
+        timer.current = setTimeout(() => {
+          callback(...args);
+        }, delay);
+      };
+    };
+
+    // --- Componentes de la UI ---
+
+    /**
+     * Componente SVG para los iconos de dados 3D.
+     */
+    const DiceSVG = React.memo(({ type, className, style }) => {
+      const baseType = type.split('_')[0];
+      const IconComponent = POLYHEDRAL_ICONS[baseType];
+      if (!IconComponent) return null;
+      
+      const colorVars = style || {
+        '--dice-color-light': DICE_COLORS[type]?.light || '#eee',
+        '--dice-color-mid': DICE_COLORS[type]?.mid || '#ccc',
+        '--dice-color-dark': DICE_COLORS[type]?.dark || '#999',
+      };
+      
+      return (
+        <IconComponent 
+          className={className} 
+          style={colorVars} 
+        />
+      );
+    });
+
+    /**
+     * Componente para el selector de cantidad de dados (Pool).
+     */
+    const DicePoolSelector = React.memo(({ dicePool, setDicePool }) => {
+      const diceTypes = DICE_TYPES;
+
+      const updatePool = (type, delta) => {
+        setDicePool(prevPool => {
+          const currentCount = prevPool[type] || 0;
+          const newCount = Math.max(0, Math.min(MAX_DICE_PER_TYPE, currentCount + delta));
+          return { ...prevPool, [type]: newCount };
+        });
+      };
+
+      return (
+        <section aria-labelledby="dice-pool-header" className="mb-6 p-4 bg-white/5 rounded-lg shadow-lg">
+          <h2 id="dice-pool-header" className="text-xl font-bold text-white mb-4 text-center">Seleccionar Pool de Dados</h2>
+          {/* CAMBIO (v4.12):
+            - grid-cols-2 (móvil) y md:grid-cols-6 (PC)
+            - gap-4 (más separación)
+          */}
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+            {diceTypes.map(type => {
+              const count = dicePool[type] || 0;
+              
+              const colorVars = {
+                '--dice-color-light': DICE_COLORS[type].light,
+                '--dice-color-mid': DICE_COLORS[type].mid,
+                '--dice-color-dark': DICE_COLORS[type].dark,
+              };
+              
+              const labelParts = type.split('_');
+              const baseLabel = labelParts[0];
+              const subLabel = labelParts[1];
+              
+              return (
+                <div key={type} className="flex flex-col items-center p-3 bg-gray-800/50 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 hover:bg-gray-700/70">
+                  <div className="relative w-16 h-16 mb-2" style={{ filter: 'drop-shadow(0 5px 10px rgba(0,0,0,0.6))' }}>
+                    <DiceSVG 
+                      type={type} 
+                      className="w-full h-full"
+                      style={colorVars} 
+                    />
+                  </div>
+                  <span className="text-lg font-semibold text-white mb-2">
+                    {baseLabel}
+                    <span className="dice-label-sub">{subLabel}</span>
+                  </span>
+                  {/*
+                    CAMBIO (v4.12):
+                    - space-x-1 (móvil) y sm:space-x-2 (PC)
+                  */}
+                  <div className="flex items-center space-x-1 sm:space-x-2">
+                    <button
+                      onClick={() => updatePool(type, -1)}
+                      disabled={count === 0}
+                      className="w-8 h-8 bg-red-600 text-white rounded-full font-bold text-lg disabled:bg-gray-600 disabled:opacity-50 transition-colors"
+                      aria-label={`Reducir ${type}`}
+                    >
+                      -
+                    </button>
+                    <span className="text-xl font-bold text-white w-10 text-center" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                      {count}
+                    </span>
+                    <button
+                      onClick={() => updatePool(type, 1)}
+                      disabled={count >= MAX_DICE_PER_TYPE}
+                      className="w-8 h-8 bg-green-600 text-white rounded-full font-bold text-lg disabled:bg-gray-600 disabled:opacity-50 transition-colors"
+                      aria-label={`Aumentar ${type}`}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      );
+    });
+
+    /**
+     * Componente que muestra el resultado de un solo dado con animación 3D.
+     */
+    const DiceResultDisplay = React.memo(({ result, images, onAnimationEnd }) => {
+      const { type, value, rolling, rotation, translation } = result;
+
+      const faceKey = `${type}_Face_${value}`;
+      const customFace = images[faceKey] || images[`${type}_Base`];
+      
+      const isImage = customFace && (customFace.startsWith('http') || customFace.startsWith('data:'));
+      const isEmoji = customFace && !isImage;
+
+      const colorVars = {
+        '--dice-color-light': DICE_COLORS[type]?.light || '#eee',
+        '--dice-color-mid': DICE_COLORS[type]?.mid || '#ccc',
+        '--dice-color-dark': DICE_COLORS[type]?.dark || '#999',
+      };
+
+      const dice3DStyle = {
+        ...colorVars,
+        transform: rolling 
+          ? `translate3d(${translation.x}px, ${translation.y}px, 0) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(${rotation.z}deg)`
+          : 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg)',
+        transition: `transform ${ROLL_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`,
+      };
+      
+      const resultStyle = {
+        transition: `opacity 0.3s ease-in-out`,
+        transitionDelay: rolling ? '0ms' : `${ROLL_DURATION - 500}ms`,
+        opacity: rolling ? 0 : 1,
+        textShadow: '0 1px 3px rgba(0,0,0,0.7)',
+      };
+      
+      const showBaseDice = !isImage && !isEmoji;
+
+      return (
+        <div
+          className="relative w-24 h-24 sm:w-28 sm:h-28 m-2 perspective-800"
+          onTransitionEnd={onAnimationEnd}
+        >
+          {/* El Dado 3D (se oculta si hay una imagen/emoji personalizado) */}
+          <div
+            className="w-full h-full"
+            style={{
+              ...dice3DStyle,
+              transition: `transform ${ROLL_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ${ROLL_DURATION - 300}ms`,
+              opacity: (rolling || showBaseDice) ? 1 : 0,
+            }}
+          >
+            <DiceSVG 
+              type={type} 
+              className="w-full h-full"
+              style={colorVars} 
+            />
+          </div>
+          
+          {/* El Resultado (aparece encima) */}
+          <div 
+            className="absolute inset-0 flex items-center justify-center pointer-events-none"
+            style={resultStyle}
+          >
+            {isImage ? (
+              <img src={customFace} alt={`Cara ${value}`} className="w-full h-full object-cover rounded-lg" style={{ 
+                filter: 'drop-shadow(0 0 5px rgba(0,0,0,0.5))',
+                transform: rolling ? 'scale(0.5)' : 'scale(1)',
+                transition: `transform ${ROLL_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`
+              }} />
+            ) : (
+              <span className={`${isEmoji ? 'text-6xl' : `text-4xl font-bold ${showBaseDice ? 'text-black' : 'text-transparent'}`} text-center`}>
+                {isEmoji ? customFace : (showBaseDice ? value : '')}
+              </span>
+            )}
+          </div>
+
+          {/* La etiqueta (D4₁, D20₂) */}
+          <span 
+            className={`absolute -top-2 -right-2 bg-gray-900 text-white text-xs 
+                        font-bold px-2 py-1 rounded-full shadow-lg transition-opacity
+                        ${rolling ? 'opacity-0' : 'opacity-100'}`}
+            style={{ transitionDelay: rolling ? '0ms' : `${ROLL_DURATION - 500}ms` }}
+          >
+            {type.replace('_1', '₁').replace('_2', '₂')}
+          </span>
+        </div>
+      );
+    });
+
+    /**
+     * Componente del Modal de Configuración.
+     */
+    const SettingsModal = ({ 
+      isVisible, 
+      onClose, 
+      currentSet, 
+      onSetChange, 
+      onSaveSet, 
+      onLoadSet, 
+      onDeleteSet, 
+      allSets,
+    }) => {
+
+      if (!isVisible) return null;
+
+      const [isLoading, setIsLoading] = useState(null); 
+
+      const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        onSetChange(name, value);
+      };
+
+      const handleFileUpload = (e, inputName) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        if (file.size > 500 * 1024) { 
+          alert("Error: El archivo es demasiado grande (Máx 500KB). Por favor, usa una imagen más pequeña o una URL.");
+          return;
+        }
+
+        const reader = new FileReader();
+        setIsLoading(inputName);
+
+        reader.onload = (event) => {
+          const base64String = event.target.result;
+          onSetChange(inputName, base64String);
+          setIsLoading(null);
+        };
+        
+        reader.onerror = (error) => {
+          console.error("Error leyendo el archivo:", error);
+          alert("Error al leer el archivo.");
+          setIsLoading(null);
+        };
+
+        reader.readAsDataURL(file); 
+      };
+
+      const renderFaceInputs = (type) => {
+        const baseType = type.split('_')[0]; 
+        const sides = parseInt(baseType.substring(1)); 
+        
+        // --- IMPLEMENTACIÓN DEL COMPROMISO ---
+        if (baseType === 'D12' || baseType === 'D20') {
+          return (
+            <p className="text-gray-400 text-sm italic p-4 text-center">
+              La personalización de caras está deshabilitada para {baseType} para
+              ahorrar espacio en el set de dados y evitar errores de guardado.
+            </p>
+          );
+        }
+        // ------------------------------------
+        
+        const inputs = [];
+        inputs.push(
+          <label key={`${type}_Base`} className="block mb-4">
+            <span className="text-gray-300">Imagen/Emoji Base {type.replace('_1', ' (Dado 1)').replace('_2', ' (Dado 2)')}:</span>
+            <input
+              type="text"
+              name={`images.${type}_Base`}
+              value={currentSet.images[`${type}_Base`] || ''}
+              onChange={handleInputChange}
+              className="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white"
+              placeholder={`URL, emoji o subir archivo`}
+            />
+            <input
+              type="file"
+              accept="image/*,.gif"
+              onChange={(e) => handleFileUpload(e, `images.${type}_Base`)}
+              className="w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4
+                         file:rounded-full file:border-0 file:text-sm file:font-semibold
+                         file:bg-blue-600 file:text-white hover:file:bg-blue-700 mt-2 cursor-pointer"
+            />
+            {isLoading === `images.${type}_Base` && <p className="text-blue-400 text-sm animate-pulse">Cargando imagen...</p>}
+          </label>
+        );
+
+        for (let i = 0; i <= sides; i++) {
+          if (baseType !== 'D10' && i === 0) continue;
+          if (baseType === 'D10' && i > 9) continue;
+          
+          const key = `${type}_Face_${i}`;
+          const inputName = `images.${key}`;
+
+          inputs.push(
+            <label key={key} className="block mb-4">
+              <span className="text-gray-300">Cara {i}:</span>
+              <input
+                type="text"
+                name={inputName}
+                value={currentSet.images[key] || ''}
+                onChange={handleInputChange}
+                className="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white"
+                placeholder={`URL, emoji o subir archivo`}
+              />
+              <input
+                type="file"
+                accept="image/*,.gif"
+                onChange={(e) => handleFileUpload(e, inputName)}
+                className="w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4
+                           file:rounded-full file:border-0 file:text-sm file:font-semibold
+                           file:bg-blue-600 file:text-white hover:file:bg-blue-700 mt-2 cursor-pointer"
+              />
+              {isLoading === inputName && <p className="text-blue-400 text-sm animate-pulse">Cargando imagen...</p>}
+            </label>
+          );
+        }
+        
+        return inputs;
+      };
+
+      return (
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 flex justify-center items-center p-4">
+          <div className="bg-gray-800 w-full max-w-2xl max-h-[90vh] rounded-lg shadow-2xl p-6 overflow-y-auto">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-2xl font-bold text-white">Configuración y Sets de Dados</h2>
+              <button onClick={onClose} className="text-gray-400 hover:text-white text-3xl" aria-label="Cerrar configuración">&times;</button>
+            </div>
+
+            <div className="bg-gray-700/50 p-4 rounded-lg mb-6">
+              <h3 className="text-xl font-semibold text-white mb-3">Gestión de Sets</h3>
+              <p className="text-yellow-400 text-xs mb-3 bg-yellow-900/50 p-2 rounded-md">
+                <strong>Aviso:</strong> La subida de archivos locales (Base64) ocupa mucho espacio.
+                La personalización de D12 y D20 está deshabilitada para no superar el límite de 1MB de Firestore por set.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="text"
+                  name="setName"
+                  value={currentSet.setName || ''}
+                  onChange={handleInputChange}
+                  placeholder="Nombre del Set"
+                  className="flex-grow p-2 bg-gray-900 border border-gray-700 rounded text-white"
+                />
+                <button
+                  onClick={onSaveSet}
+                  disabled={!currentSet.setName}
+                  className="px-4 py-2 bg-blue-600 text-white rounded font-semibold hover:bg-blue-700 transition-colors disabled:bg-gray-500"
+                >
+                  Guardar Set
+                </button>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 mt-4">
+                <select
+                  onChange={(e) => onLoadSet(e.target.value)}
+                  value=""
+                  className="flex-grow p-2 bg-gray-900 border border-gray-700 rounded text-white"
+                >
+                  <option value="">Cargar un Set...</option>
+                  {allSets.map(set => (
+                    <option key={set.id} value={set.id}>{set.name}</option>
+                  ))}
+                </select>
+                <button
+                  onClick={onDeleteSet}
+                  disabled={!currentSet.id}
+                  className="px-4 py-2 bg-red-600 text-white rounded font-semibold hover:bg-red-700 transition-colors disabled:bg-gray-500"
+                >
+                  Eliminar Set Actual
+                </button>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <label className="block mb-4">
+                <span className="text-gray-300 text-lg">URL Fondo de Pantalla:</span>
+                <input
+                  type="text"
+                  name="backgroundUrl"
+                  value={currentSet.backgroundUrl || ''}
+                  onChange={handleInputChange}
+                  className="w-full p-2 bg-gray-900 border border-gray-700 rounded text-white mt-1"
+                  placeholder="URL, emoji o subir archivo"
+                />
+                <input
+                  type="file"
+                  accept="image/*,.gif"
+                  onChange={(e) => handleFileUpload(e, 'backgroundUrl')}
+                  className="w-full text-sm text-gray-400 file:mr-4 file:py-2 file:px-4
+                             file:rounded-full file:border-0 file:text-sm file:font-semibold
+                             file:bg-blue-600 file:text-white hover:file:bg-blue-700 mt-2 cursor-pointer"
+                />
+                {isLoading === 'backgroundUrl' && <p className="text-blue-400 text-sm animate-pulse">Cargando imagen...</p>}
+              </label>
+              
+              {/* NUEVO: Itera sobre los tipos clonados */}
+              {DICE_TYPES.map(type => {
+                const baseType = type.split('_')[0];
+                const label = type.replace('_1', ' (Dado 1)').replace('_2', ' (Dado 2)');
+                
+                return (
+                  <details key={`${type}_details`} className="bg-gray-700/50 rounded-lg p-3">
+                    <summary className="text-lg font-semibold text-white cursor-pointer">Configurar {baseType}{label}</summary>
+                    <div className="mt-4 border-t border-gray-600 pt-4">
+                      {renderFaceInputs(type)}
+                    </div>
+                  </details>
+                );
+              })}
+            </div>
+
+            <button onClick={onClose} className="mt-6 w-full py-2 bg-gray-600 text-white rounded font-semibold hover:bg-gray-700 transition-colors">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      );
+    };
+
+    // --- Componente Principal (App) ---
+    const App = () => {
+      const [dicePool, setDicePool] = useState({});
+      const [results, setResults] = useState([]);
+      const [total, setTotal] = useState(null);
+      const [isSumActive, setIsSumActive] = useState(false); // CAMBIADO: Inicia en false
+      const [isRolling, setIsRolling] = useState(false);
+      
+      const [isSettingsVisible, setIsSettingsVisible] = useState(false);
+      const [allSets, setAllSets] = useState([]); 
+      const [currentSet, setCurrentSet] = useState({
+        id: null,
+        setName: '',
+        backgroundUrl: '',
+        images: {}
+      });
+
+      const [dbStatus, setDbStatus] = useState('Cargando...'); 
+      const [userId, setUserId] = useState(null);
+
+      const [narration, setNarration] = useState('');
+      const [isNarrating, setIsNarrating] = useState(false);
+
+      const lastShakeTime = useRef(0);
+      
+      // NUEVO (v4.17): Ref para la sección de resultados
+      const resultsRef = useRef(null);
+      
+      /**
+       * Genera la narración de IA para una tirada de D20.
+       */
+      const fetchNarration = useCallback(async (rollValue, type) => {
+        setIsNarrating(true);
+        setNarration('');
+        
+        if (!type.startsWith('D20')) return;
+
+        let outcome;
+        if (rollValue === 20) outcome = "Éxito Crítico Perfecto";
+        else if (rollValue === 1) outcome = "Pifia Desastrosa";
+        else if (rollValue > 15) outcome = "Gran Éxito";
+        else if (rollValue > 10) outcome = "Éxito Moderado";
+        else if (rollValue > 5) outcome = "Fallo Parcial";
+        else outcome = "Fallo Notable";
+
+        const systemPrompt = "Eres un Dungeon Master experto con gran talento para la narración. En 2-3 frases cortas y en español, describe la consecuencia de una acción de un jugador basada en su tirada de dado. Sé creativo y dramático. No menciones el número de la tirada, solo describe la acción.";
+        const userQuery = `La tirada ha sido un ${outcome}. Describe qué ha pasado.`;
+
+        const fetchWithRetry = async (retries = 3, delay = 1000) => {
+          try {
+            const payload = {
+              contents: [{ parts: [{ text: userQuery }] }],
+              systemInstruction: { parts: [{ text: systemPrompt }] },
+            };
+
+            const response = await fetch(GEMINI_API_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) throw new Error(`Error de API: ${response.status}`);
+            
+            const result = await response.json();
+            const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+            
+            if (text) {
+              setNarration(text);
+            } else {
+              throw new Error("Respuesta de API inesperada.");
+            }
+          } catch (error) {
+            console.warn(`Intento de API fallido: ${error.message}`);
+            if (retries > 0) {
+              await new Promise(res => setTimeout(res, delay));
+              return fetchWithRetry(retries - 1, delay * 2); 
+            } else {
+              setNarration("El Narrador Mágico está descansando...");
+            }
+          } finally {
+            setIsNarrating(false);
+          }
+        };
+        
+        fetchWithRetry();
+
+      }, []);
+
+      /**
+       * Lanza todos los dados del pool.
+       */
+      const rollDicePool = useCallback(() => {
+        if (isRolling) return;
+        
+        const diceToRoll = [];
+        for (const [type, count] of Object.entries(dicePool)) {
+          for (let i = 0; i < count; i++) {
+            diceToRoll.push(type); 
+          }
+        }
+
+        if (diceToRoll.length === 0) {
+          setResults([]);
+          setTotal(null);
+          setNarration("");
+          return;
+        }
+
+        setIsRolling(true);
+        setTotal(null);
+        setNarration('');
+        playRollSound();
+        
+        // --- CORRECCIÓN (v4.18): Auto-Scroll INMEDIATO ---
+        // Mover el scroll aquí para que ocurra ANTES de la animación.
+        setTimeout(() => { 
+          if (resultsRef.current) {
+            // Usamos 'center' para centrarlo mejor en la pantalla
+            resultsRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 100); // Pequeño retraso para que 'resultsRef' (sección de resultados) exista
+        // ---------------------------------------------
+
+        const newResults = diceToRoll.map((type) => {
+          const rollValue = rollDie(type);
+          
+          return {
+            id: crypto.randomUUID(),
+            type, 
+            value: rollValue, 
+            rolling: true,
+            rotation: {
+              x: Math.random() * 1440 - 720, 
+              y: Math.random() * 1440 - 720,
+              z: Math.random() * 1440 - 720
+            },
+            translation: {
+              x: Math.random() * 100 - 50, 
+              y: Math.random() * 100 - 50
+            }
+          };
+        });
+        
+        setResults(newResults);
+
+        setTimeout(() => {
+          const finalizedResults = newResults.map(r => ({ ...r, rolling: false }));
+          setResults(finalizedResults);
+
+          const finalTotal = finalizedResults.reduce((sum, r) => sum + r.value, 0);
+          setTotal(finalTotal);
+          setIsRolling(false);
+          
+          if (finalizedResults.length === 1 && finalizedResults[0].type.startsWith('D20')) {
+            fetchNarration(finalizedResults[0].value, finalizedResults[0].type);
+          }
+          
+          // (Se ha quitado el scroll de aquí)
+
+        }, ROLL_DURATION); 
+
+      }, [dicePool, isRolling, fetchNarration, resultsRef]); // Añadido resultsRef a las dependencias
+
+
+      // --- Efectos de Inicialización (Firebase y Detección de Sacudida) ---
+
+      // Inicialización de Firebase y Autenticación
+      useEffect(() => {
+        // NUEVO: Lógica de error mejorada
+        if (!isFirebaseInitialized) {
+          if (firebaseInitializationError === "SCRIPT_FAIL") {
+            setDbStatus('Error: Script de Firebase no cargado.');
+          } else if (firebaseInitializationError === "CONFIG_FAIL") {
+            setDbStatus('Error: Claves de Firebase no pegadas.');
+          } else if (firebaseInitializationError) {
+             setDbStatus('Error: Fallo de inicialización.');
+          } else {
+            setDbStatus('Error: Firebase no cargado.');
+          }
+          setUserId(crypto.randomUUID()); // Modo offline
+          return;
+        }
+
+        const authTimer = setTimeout(() => {
+          if (!userId) {
+            console.warn("Firebase auth timeout. Forzando modo offline.");
+            setDbStatus("Error: Timeout de Conexión.");
+            setUserId(crypto.randomUUID());
+          }
+        }, 5000); 
+
+        // Usamos la API compatible global
+        const unsubscribe = firebase.auth().onAuthStateChanged(async (user) => {
+          clearTimeout(authTimer);
+          if (user) {
+            setUserId(user.uid);
+            setDbStatus('Conectado');
+          } else if (initialAuthToken) {
+            try {
+              await firebase.auth().signInWithCustomToken(initialAuthToken);
+            } catch (e) {
+              console.error("Error de Custom Token, intentando anónimo:", e);
+              try {
+                await firebase.auth().signInAnonymously();
+              } catch (anonError) {
+                console.error("Error de inicio anónimo:", anonError);
+                setDbStatus("Error: Fallo de autenticación.");
+                setUserId(crypto.randomUUID());
+              }
+            }
+          } else {
+            try {
+              await firebase.auth().signInAnonymously();
+            } catch (e) {
+              console.error("Error de inicio anónimo:", e);
+              setDbStatus("Error: Fallo de autenticación.");
+              setUserId(crypto.randomUUID());
+            }
+          }
+        });
+
+        return () => {
+          clearTimeout(authTimer);
+          unsubscribe(); 
+        };
+      }, []); 
+
+      // Suscripción a los Sets de Firestore
+      useEffect(() => {
+        if (dbStatus !== 'Conectado' || !userId || !appId) return;
+
+        // CORRECCIÓN (v4.9): Usar la ruta privada del usuario
+        const collectionPath = `artifacts/${appId}/users/${userId}/${FIRESTORE_COLLECTION}`;
+        
+        // Usamos la API compatible global
+        const q = db.collection(collectionPath); // Ya no se necesita .where()
+
+        const unsubscribe = q.onSnapshot((snapshot) => {
+          const setsData = snapshot.docs.map(doc => ({
+            id: doc.id,
+            name: doc.data().setName,
+            ...doc.data()
+          }));
+          setAllSets(setsData);
+        }, (error) => {
+          console.error("Error al escuchar sets:", error);
+          setDbStatus("Error: Fallo al leer datos.");
+        });
+
+        return () => unsubscribe(); 
+      }, [dbStatus, userId]); 
+
+      // Detector de Sacudida (Shake)
+      useEffect(() => {
+        if (!('DeviceMotionEvent' in window)) {
+          console.warn("DeviceMotionEvent no soportado en este navegador.");
+          return;
+        }
+
+        const handleShake = (event) => {
+          const now = Date.now();
+          if (now - lastShakeTime.current < DEBOUNCE_TIME) return;
+
+          const { accelerationIncludingGravity } = event;
+          if (!accelerationIncludingGravity) return;
+
+          const { x, y, z } = accelerationIncludingGravity;
+          const magnitude = Math.sqrt(x * x + y * y + z * z);
+
+          if (magnitude > SHAKE_THRESHOLD) {
+            lastShakeTime.current = now;
+            if (Object.values(dicePool).some(count => count > 0)) {
+              rollDicePool();
+            }
+          }
+        };
+
+        window.addEventListener('devicemotion', handleShake);
+        return () => window.removeEventListener('devicemotion', handleShake);
+      }, [dicePool, rollDicePool]); 
+
+      // --- Manejadores de Eventos (Sets de Dados) ---
+
+      const handleSetChange = (name, value) => {
+        if (name.startsWith('images.')) {
+          const imageKey = name.split('.')[1];
+          setCurrentSet(prev => ({
+            ...prev,
+            images: { ...prev.images, [imageKey]: value }
+          }));
+        } else {
+          setCurrentSet(prev => ({ ...prev, [name]: value }));
+        }
+      };
+
+      const handleSaveSet = async () => {
+        if (dbStatus !== 'Conectado' || !currentSet.setName || !userId || !appId) {
+          alert("La conexión con la base de datos no está activa. No se puede guardar.");
+          return;
+        }
+
+        // CORRECCIÓN (v4.9): Usar la ruta privada del usuario
+        const collectionPath = `artifacts/${appId}/users/${userId}/${FIRESTORE_COLLECTION}`;
+        
+        const setData = {
+          setName: currentSet.setName,
+          backgroundUrl: currentSet.backgroundUrl || '',
+          images: currentSet.images || {},
+          ownerId: userId, // Sigue siendo útil guardarlo
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp() // API compatible
+        };
+
+        try {
+          if (currentSet.id) {
+            await db.collection(collectionPath).doc(currentSet.id).set(setData, { merge: true });
+            alert("Set actualizado!");
+          } else {
+            const docRef = await db.collection(collectionPath).add(setData);
+            setCurrentSet(prev => ({ ...prev, id: docRef.id })); 
+            alert("Set guardado!");
+          }
+        } catch (e) {
+          console.error("Error al guardar el set:", e);
+          alert("Error al guardar. Revisa la consola.");
+        }
+      };
+
+      const handleLoadSet = (setId) => {
+        const setToLoad = allSets.find(s => s.id === setId);
+        if (setToLoad) {
+          setCurrentSet({
+            id: setToLoad.id,
+            setName: setToLoad.setName,
+            backgroundUrl: setToLoad.backgroundUrl || '',
+            images: setToLoad.images || {}
+          });
+        }
+      };
+
+      const handleDeleteSet = async () => {
+        if (dbStatus !== 'Conectado' || !currentSet.id || !appId) {
+          alert("No hay un set seleccionado o la base de datos no está conectada.");
+          return;
+        }
+        
+        if (!window.confirm(`¿Seguro que quieres eliminar el set "${currentSet.setName}"?`)) {
+          return;
+        }
+
+        // CORRECCIÓN (v4.9): Usar la ruta privada del usuario
+        const collectionPath = `artifacts/${appId}/users/${userId}/${FIRESTORE_COLLECTION}`;
+        try {
+          await db.collection(collectionPath).doc(currentSet.id).delete();
+          alert("Set eliminado.");
+          setCurrentSet({ id: null, setName: '', backgroundUrl: '', images: {} });
+        } catch (e) {
+          console.error("Error al eliminar el set:", e);
+          alert("Error al eliminar. Revisa la consola.");
+        }
+      };
+
+      const backgroundStyle = useMemo(() => {
+        const defaultGradient = 'linear-gradient(135deg, #2b3a4a 0%, #1c2530 100%)';
+        const bgImage = currentSet.backgroundUrl 
+          ? `url(${currentSet.backgroundUrl})` 
+          : defaultGradient;
+        
+        // Actualiza el body también para que el fondo se aplique
+        document.body.style.backgroundImage = bgImage;
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundPosition = 'center';
+        document.body.style.backgroundAttachment = 'fixed';
+        
+        // El estilo del div principal solo necesita ser transparente
+        return {
+          backgroundColor: 'rgba(0,0,0,0.3)' // Superposición oscura
+        };
+      }, [currentSet.backgroundUrl]);
+
+
+      return (
+        <div className="font-sans min-h-screen text-white transition-colors" style={{ fontFamily: 'sans-serif' }}>
+          <SettingsModal
+            isVisible={isSettingsVisible}
+            onClose={() => setIsSettingsVisible(false)}
+            currentSet={currentSet}
+            onSetChange={handleSetChange}
+            onSaveSet={handleSaveSet}
+            onLoadSet={handleLoadSet}
+            onDeleteSet={handleDeleteSet}
+            allSets={allSets}
+          />
+
+          <main className="max-w-4xl mx-auto p-4 sm:p-6 min-h-screen backdrop-blur-sm" style={backgroundStyle}>
+            <header className="flex justify-between items-center mb-6">
+              <h1 className="text-3xl sm:text-4xl font-bold text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+                Lanzador RPG Pro
+              </h1>
+              <div className="flex items-center space-x-3">
+                <label className="flex items-center cursor-pointer" title="Activar/Desactivar suma total">
+                  <input
+                    type="checkbox"
+                    checked={isSumActive}
+                    onChange={() => setIsSumActive(!isSumActive)}
+                    className="sr-only"
+                  />
+                  <div className={`w-12 h-6 ${isSumActive ? 'bg-green-500' : 'bg-gray-600'} rounded-full p-1 flex items-center transition-colors`}>
+                    <div className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform ${isSumActive ? 'translate-x-6' : 'translate-x-0'}`}></div>
+                  </div>
+                  <span className="ml-2 text-lg font-semibold text-white">SUMA</span>
+                </label>
+                
+                <button
+                  onClick={() => setIsSettingsVisible(true)}
+                  className="text-white p-2 rounded-full hover:bg-white/20 transition-colors"
+                  aria-label="Abrir configuración"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+              </div>
+            </header>
+
+            <DicePoolSelector dicePool={dicePool} setDicePool={setDicePool} />
+
+            <div className="text-center my-6">
+              <button
+                onClick={rollDicePool}
+                disabled={isRolling}
+                className="w-full sm:w-auto px-12 py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white 
+                            text-2xl font-bold rounded-lg shadow-lg 
+                            transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl
+                            disabled:from-gray-500 disabled:to-gray-700 disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {isRolling ? 'Lanzando...' : 'Lanzar Todos los Dados'}
+              </button>
+            </div>
+
+            {results.length > 0 && (
+              // NUEVO (v4.17): Añadido el ref para el auto-scroll
+              <section ref={resultsRef} aria-labelledby="results-header" className="p-4 bg-white/5 rounded-lg shadow-inner min-h-[150px]">
+                <h2 id="results-header" className="text-xl font-bold text-white mb-4 text-center">Resultados</h2>
+                
+                {isSumActive && total !== null && (
+                  <div className="text-center mb-6">
+                    <span className="text-lg text-gray-300">Total:</span>
+                    <span className="block text-6xl font-bold text-yellow-300" style={{ textShadow: '0 0 10px rgba(253, 224, 71, 0.7)' }}>
+                      {total}
+                    </span>
+                  </div>
+                )}
+
+                <div className="flex flex-wrap justify-center items-center">
+                  {results.map((result, index) => (
+                    <DiceResultDisplay
+                      key={result.id}
+                      result={result}
+                      images={currentSet.images}
+                      onAnimationEnd={() => {}}
+                    />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {(isNarrating || narration) && (
+              <section aria-labelledby="narration-header" className="mt-6 p-4 bg-gradient-to-r from-indigo-900/70 to-purple-900/70 rounded-lg shadow-lg border border-purple-400">
+                <h2 id="narration-header" className="text-xl font-bold text-purple-200 mb-3">Narrador Mágico</h2>
+                {isNarrating && !narration && (
+                  <p className="text-gray-300 italic animate-pulse">El destino se está escribiendo...</p>
+                )}
+                <p className="text-white text-lg leading-relaxed">{narration}</p>
+              </section>
+            )}
+
+            <footer className="text-center mt-6 text-sm">
+              <p className={`font-semibold ${dbStatus === 'Conectado' ? 'text-green-400' : 'text-red-400'}`}>
+                Estado de DB: {dbStatus} {dbStatus === 'Conectado' ? `(ID: ${userId ? userId.substring(0, 8) : '...'}...)` : "(Sets offline)"}
+              </p>
+            </footer>
+          </main>
+        </div>
+      );
+    };
+
+    // --- Montar la Aplicación ---
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+
+  </script>
+
+</body>
+</html>
