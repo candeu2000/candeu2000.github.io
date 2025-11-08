@@ -5,31 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lanzador de Dados RPG Pro</title>
   
-  <!-- v4.16: Manifiesto PWA incrustado (para Android) -->
-  <!-- Define el nombre, el inicio y los iconos PNG (codificados en el SVG Base64) -->
-  <link rel="manifest" href='data:application/manifest+json,{
-    "name": "Lanzador RPG Pro",
-    "short_name": "Dados RPG",
-    "start_url": ".",
-    "display": "standalone",
-    "background_color": "#1c2530",
-    "theme_color": "#1c2530",
-    "icons": [
-      {
-        "src": "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJvaUUtXHdpZHRoPSIxIi8+PC9zdmc+",
-        "sizes": "192x192",
-        "type": "image/svg+xml"
-      },
-      {
-        "src": "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJvaUUtXHdpZHRoPSIxIi8+PC9zdmc+",
-        "sizes": "512x512",
-        "type": "image/svg+xml"
-      }
-    ]
-  }'>
+  <!-- v4.18: Enlace al manifiesto PWA externo -->
+  <link rel="manifest" href="manifest.json">
   
-  <!-- Icono para "Añadir a pantalla de inicio" en iOS (fallback para Android) -->
-  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJvaUUtXHdpZHRoPSIxIi8+PC9zdmc+">
+  <!-- v4.18: Icono de Apple (sigue siendo una buena práctica) -->
+  <link rel="apple-touch-icon" href="icon.svg">
   
   <!-- Meta tags PWA -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -71,16 +51,10 @@
   <!-- Contenedor donde React montará la aplicación -->
   <div id="root"></div>
 
-  <!-- 4. Nuestro Código de la Aplicación (v4.18 - Auto-Scroll CORREGIDO) -->
+  <!-- 4. Nuestro Código de la Aplicación (v4.18 - Auto-Scroll Corregido) -->
   <script type="text/babel">
     /**
      * Lanzador de Dados RPG Personalizable v4.18 (Auto-Scroll Corregido)
-     *
-     * CAMBIOS CLAVE:
-     * 1.  CORREGIDO: El Auto-scroll (v4.17) ahora se ejecuta INMEDIATAMENTE
-     * al pulsar "Lanzar", en lugar de esperar al final de la animación.
-     * 2.  MEJORADO: El scroll ahora usa `block: 'center'` para centrar
-     * la sección de resultados en la pantalla.
      *
      * Mantiene todas las características:
      * - Clonación Total (D4-D20) con personalización limitada en D12/D20.
@@ -88,6 +62,7 @@
      * - Carga de imágenes locales (Base64) y URLs/Emojis.
      * - Guardado en Firestore y Narrador IA (Gemini).
      * - (Claves de Firebase insertadas por el usuario).
+     * - Auto-Scroll (v4.17).
      */
 
     // Asignar desde los scripts cargados
@@ -1129,7 +1104,7 @@
           <main className="max-w-4xl mx-auto p-4 sm:p-6 min-h-screen backdrop-blur-sm" style={backgroundStyle}>
             <header className="flex justify-between items-center mb-6">
               <h1 className="text-3xl sm:text-4xl font-bold text-white" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
-                Lanzador RPG Pro
+                Lanzador de Dados RPG Pro
               </h1>
               <div className="flex items-center space-x-3">
                 <label className="flex items-center cursor-pointer" title="Activar/Desactivar suma total">
