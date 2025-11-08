@@ -1,16 +1,21 @@
 {
-"name": "Lanzador de Dados RPG Pro",
+"name": "Lanzador RPG Pro",
 "short_name": "Dados RPG",
 "start_url": ".",
 "display": "standalone",
 "background_color": "#1c2530",
-"theme_color": "#1c2530",
+"theme_color": "#6f42c1",
 "description": "Una aplicación avanzada para lanzar dados de rol con personalización.",
 "icons": [
 {
-"src": "icon.svg",
-"sizes": "any",
-"type": "image/svg+xml"
+"src": "https://www.google.com/search?q=https://placehold.co/192x192/6f42c1/FFFFFF%3Ftext%3DD20",
+"sizes": "192x192",
+"type": "image/png"
+},
+{
+"src": "https://www.google.com/search?q=https://placehold.co/512x512/6f42c1/FFFFFF%3Ftext%3DD20",
+"sizes": "512x512",
+"type": "image/png"
 }
 ]
 }
