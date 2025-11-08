@@ -1,0 +1,10 @@
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Estos son los colores morados del D20_1 -->
+  <path d="M32 4L52 16L62 38L42 56L22 56L4 38L12 16L32 4Z" fill="#e2d9f3" stroke="#111" stroke-width="1"/>
+  <path d="M32 4L52 16L32 24L12 16L32 4Z" fill="#e2d9f3" stroke="#111" stroke-width="1"/>
+  <path d="M52 16L62 38L42 28L32 24L52 16Z" fill="#6f42c1" stroke="#111" stroke-width="1"/>
+  <path d="M12 16L4 38L22 28L32 24L12 16Z" fill="#c0b6e3" stroke="#111" stroke-width="1"/>
+  <path d="M4 38L22 56L32 46L22 28L4 38Z" fill="#c0b6e3" stroke="#111" stroke-width="1"/>
+  <path d="M62 38L42 56L32 46L42 28L62 38Z" fill="#6f42c1" stroke="#111" stroke-width="1"/>
+  <path d="M22 56L42 56L32 46L22 56Z" fill="#c0b6e3" stroke="#111" stroke-width="1"/>
+</svg>
