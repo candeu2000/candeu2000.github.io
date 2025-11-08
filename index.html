@@ -5,11 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lanzador de Dados RPG Pro</title>
   
-  <!-- v4.18: Enlace al manifiesto PWA externo -->
-  <link rel="manifest" href="manifest.json">
+  <!-- v4.19: Manifiesto PWA incrustado (con Base64 CORREGIDO) -->
+  <link rel="manifest" href='data:application/manifest+json,{
+    "name": "Lanzador RPG Pro",
+    "short_name": "Dados RPG",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#1c2530",
+    "theme_color": "#1c2530",
+    "icons": [
+      {
+        "src": "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=",
+        "sizes": "192x192",
+        "type": "image/svg+xml"
+      },
+      {
+        "src": "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=",
+        "sizes": "512x512",
+        "type": "image/svg+xml"
+      }
+    ]
+  }'>
   
-  <!-- v4.18: Icono de Apple (sigue siendo una buena práctica) -->
-  <link rel="apple-touch-icon" href="icon.svg">
+  <!-- Icono para "Añadir a pantalla de inicio" en iOS (fallback para Android) -->
+  <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=">
   
   <!-- Meta tags PWA -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,7 +70,7 @@
   <!-- Contenedor donde React montará la aplicación -->
   <div id="root"></div>
 
-  <!-- 4. Nuestro Código de la Aplicación (v4.18 - Auto-Scroll Corregido) -->
+  <!-- 4. Nuestro Código de la Aplicación (v4.18 - Auto-Scroll CORREGIDO) -->
   <script type="text/babel">
     /**
      * Lanzador de Dados RPG Personalizable v4.18 (Auto-Scroll Corregido)
