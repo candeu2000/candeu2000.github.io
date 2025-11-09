@@ -5,27 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lanzador de Dados RPG Pro</title>
   
-  <!-- v4.19: Manifiesto PWA incrustado (con Base64 CORREGIDO) -->
-  <link rel="manifest" href='data:application/manifest+json,{
-    "name": "Lanzador RPG Pro",
-    "short_name": "Dados RPG",
-    "start_url": ".",
-    "display": "standalone",
-    "background_color": "#1c2530",
-    "theme_color": "#1c2530",
-    "icons": [
-      {
-        "src": "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=",
-        "sizes": "192x192",
-        "type": "image/svg+xml"
-      },
-      {
-        "src": "data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=",
-        "sizes": "512x512",
-        "type": "image/svg+xml"
-      }
-    ]
-  }'>
+  <!-- v4.22: Manifiesto PWA incrustado (con Base64 CORREGIDO y SVG incrustado) -->
+  <!-- Esto elimina todos los archivos externos y conflictos -->
+  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiTGFuemFkb3IgUlBHIFBybyIsInNob3J0X25hbWUiOiJEYWRvcyBSR1AiLCJzdGFydF91cmwiOiIuIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiIzFjMjUzMCIsInRoZW1lX2NvbG9yIjoiIzZmNDJjMSIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIyYVdWM1ZnVjJaVzVwZEGsaGRHUmxJRzFsZEdWeWN5QjNhV1IwYUQwaU1EQWdOakEwT0FSaFltTmxMaUJoY0hBdGMyaGZNVGsyTERNNk16aEw0Mk81NkxNeklrNTZNNENBTTJCTDNBeUlETWtMVHRyZlNBb1BTMWtZWFJoT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNRGsyTERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LSUNCcFpHVnBiR2xaT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNRE0xTERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LSUNCcFpHVnBiR2xaT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNREExTERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LSUNCcFpHVnBiR2xaT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNREUwTERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LSUNCcFpHVnBiR2xaT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNRFEwTERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LSUNCcFpHVnBiR2xaT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNREUyTERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LSUNCcFpHVnBiR2xaT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNRGcxTERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LPHN2Zz4iLCJzaXplcyI6IjE5MngxOTIiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCJ9LHsic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWlhCMmFXVjVRbVYyWlc1cGRHbGhkR1JsSUcxbGRHVnljbUIzYVdSMGFEMGlNREFnTkh0QmJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNRGsyTERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LSUNCcFpHVnBiR2xaT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNRFE0TERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LSUNCcFpHVnBiR2xaT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNRFEyTERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LSUNCcFpHVnBiR2xaT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNRGs1TERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LSUNCcFpHVnBiR2xaT2lCamJXRnpkR2x2Ym5NaUpHVjRZVzF3YkdWemN5MWlaWEpmY3oxcGJHeDFaU0JtYjI1cmN5OHlNRGcxTERBeUxuQm9jRDh4TDJOc2IyTmhkR2x2YmxOemFXOVRJR0Z1WjFOUFExWmxjbWxtYVdWa1gxUkpJRk52ZFhKaElGSmxjM1F0SUZCMVlteHBibU1pSUdGdVoxTlBRMVpsY21sbWFXVmtYMVJKSUZOMVltcG9hVzFzY3oxbGRISnBibWNNTUNCSkFoNEtTd29LPHN2Zz4iLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCJ9XX0=">
   
   <!-- Icono para "Añadir a pantalla de inicio" en iOS (fallback para Android) -->
   <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjQgNjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMyIDRMNTIgMTZMNjIgMzhMNDIgNTZMMjIgNTZMNCAMjBMMyAyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik0zMiA0TDUyIDE2TDMyIDI0TDEyIDE2TDMyIDRaIiBmaWxsPSIjZTJkOWYzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik01MiAxNkw2MiAzOEw0MiAyOEwzMiAyNEw1MiAxNloiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTEyIDE2TDQgMzhMMjIgMjhMMzIgMjRMMTIgMTZaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik00IDM4TDIyIDU2TDMyIDQ2TDIyIDI4TDQgMzhaIiBmaWxsPSIjYzBiNmUzIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMSIvPjxwYXRoIGQ9Ik02MiAzOEw0MiA1NkwzMiA0Nkw0MiAyOEw2MiAzOFoiIGZpbGw9IiM2ZjQyYzEiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBhdGggZD0iTTIyIDU2TDQyIDU2TDMyIDQ2TDIyIDU2WiIgZmlsbD0iI2MwYjZlMyIgc3Ryb2tlPSIjMTExIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=">
@@ -70,18 +52,25 @@
   <!-- Contenedor donde React montará la aplicación -->
   <div id="root"></div>
 
-  <!-- 4. Nuestro Código de la Aplicación (v4.18 - Auto-Scroll CORREGIDO) -->
+  <!-- 4. Nuestro Código de la Aplicación (v4.36 - Sincronización de Animación/Sonido) -->
   <script type="text/babel">
     /**
-     * Lanzador de Dados RPG Personalizable v4.18 (Auto-Scroll Corregido)
+     * Lanzador de Dados RPG Personalizable v4.36 (Sincronización de Animación/Sonido)
+     *
+     * CAMBIOS CLAVE:
+     * 1.  NUEVA DURACIÓN: `ROLL_DURATION` reducida a 1500ms (1.5s) para ser más rápida.
+     * 2.  NUEVA CURVA: Animación cambiada a `cubic-bezier(0.22, 1, 0.36, 1)` (ease-out)
+     * para una desaceleración más suave y fluida (menos "encasquillada").
+     * 3.  SONIDO SINCRONIZADO: `playRollSound` ahora distribuye los 4 golpes
+     * de "casino" a lo largo de los 1.5s, terminando en 1.1s.
+     * 4.  RETRASO DE RESULTADO: El resultado (número/imagen) ahora aparece
+     * a los 1100ms (ROLL_DURATION - 400ms) para coincidir con el último sonido.
+     * 5.  INICIO FLUIDO: Se usa un `setTimeout(0)` (vía `isAnimating` state)
+     * para asegurar que la animación no se "encasquille" al inicio.
      *
      * Mantiene todas las características:
-     * - Clonación Total (D4-D20) con personalización limitada en D12/D20.
-     * - Colores variantes, Animación 3D, Sonido "Casino" (v3.7).
-     * - Carga de imágenes locales (Base64) y URLs/Emojis.
-     * - Guardado en Firestore y Narrador IA (Gemini).
-     * - (Claves de Firebase insertadas por el usuario).
-     * - Auto-Scroll (v4.17).
+     * - Clonación Total, Personalización Limitada D12/D20, Colores variantes,
+     * - Carga Base64, Guardado Firestore, Narrador IA, Auto-Scroll (v4.17).
      */
 
     // Asignar desde los scripts cargados
@@ -90,7 +79,7 @@
     // --- Constantes de Configuración ---
     const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=`;
     const SHAKE_THRESHOLD = 25; 
-    const ROLL_DURATION = 1500; 
+    const ROLL_DURATION = 1500; // CAMBIO: Reducido a 1.5s
     const DEBOUNCE_TIME = 300; 
     const FIRESTORE_COLLECTION = 'dice-roller-sets';
     const MAX_DICE_PER_TYPE = 20;
@@ -269,7 +258,8 @@
     }
 
     /**
-     * Sonido "Repiqueteo de Rebotes" (v3.5)
+     * Sonido "Repiqueteo de Rebotes" (v4.36)
+     * SINCRONIZADO CON ROLL_DURATION (1500ms)
      */
     function playRollSound() {
       try {
@@ -277,12 +267,12 @@
         if (!audioContext) return;
         const now = audioContext.currentTime;
         
-        playHitSound(audioContext, now + 0.0,    0.8, 120 + Math.random() * 20);
-        playHitSound(audioContext, now + 0.3,    0.5, 130 + Math.random() * 20);
-        playHitSound(audioContext, now + 0.55,   0.4, 110 + Math.random() * 20);
-        playHitSound(audioContext, now + 0.8,    0.3, 125 + Math.random() * 20);
-        playHitSound(audioContext, now + 1.1,    0.2, 115 + Math.random() * 20);
-      
+        // Secuencia de rebotes durante la animación (1500ms)
+        playHitSound(audioContext, now + 0.0,    0.8, 120 + Math.random() * 20); // 1. Golpe inicial
+        playHitSound(audioContext, now + 0.3,    0.5, 130 + Math.random() * 20); // 2. Rebote
+        playHitSound(audioContext, now + 0.7,    0.4, 110 + Math.random() * 20); // 3. Rebote
+        playHitSound(audioContext, now + 1.1,    0.3, 125 + Math.random() * 20); // 4. Asentamiento
+  
       } catch (e) {
         console.warn("Web Audio API no es soportada o falló.", e);
       }
@@ -425,6 +415,22 @@
     const DiceResultDisplay = React.memo(({ result, images, onAnimationEnd }) => {
       const { type, value, rolling, rotation, translation } = result;
 
+      // NUEVO (v4.36): Estado para manejar el inicio fluido de la animación
+      const [isAnimating, setIsAnimating] = useState(false);
+      
+      useEffect(() => {
+        if (rolling) {
+          // Usamos un timeout 0 (requestAnimationFrame) para que la animación
+          // no se "encasquille" al inicio.
+          const timer = setTimeout(() => {
+            setIsAnimating(true);
+          }, 0); 
+          return () => clearTimeout(timer);
+        } else {
+          setIsAnimating(false);
+        }
+      }, [rolling]);
+
       const faceKey = `${type}_Face_${value}`;
       const customFace = images[faceKey] || images[`${type}_Base`];
       
@@ -437,17 +443,19 @@
         '--dice-color-dark': DICE_COLORS[type]?.dark || '#999',
       };
 
+      // CAMBIO (v4.36): Curva de animación (ease-out) y duración (1.5s)
       const dice3DStyle = {
         ...colorVars,
-        transform: rolling 
+        transform: isAnimating // Usa el estado 'isAnimating'
           ? `translate3d(${translation.x}px, ${translation.y}px, 0) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) rotateZ(${rotation.z}deg)`
           : 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg)',
-        transition: `transform ${ROLL_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`,
+        transition: `transform ${ROLL_DURATION}ms cubic-bezier(0.22, 1, 0.36, 1)`, // ease-out
       };
       
+      // CAMBIO (v4.36): Retraso de aparición del resultado (1100ms)
       const resultStyle = {
         transition: `opacity 0.3s ease-in-out`,
-        transitionDelay: rolling ? '0ms' : `${ROLL_DURATION - 500}ms`,
+        transitionDelay: rolling ? '0ms' : `${ROLL_DURATION - 400}ms`,
         opacity: rolling ? 0 : 1,
         textShadow: '0 1px 3px rgba(0,0,0,0.7)',
       };
@@ -464,7 +472,8 @@
             className="w-full h-full"
             style={{
               ...dice3DStyle,
-              transition: `transform ${ROLL_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ${ROLL_DURATION - 300}ms`,
+              // CAMBIO (v4.36): Retraso de transición de opacidad (1100ms)
+              transition: `transform ${ROLL_DURATION}ms cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ${ROLL_DURATION - 400}ms`,
               opacity: (rolling || showBaseDice) ? 1 : 0,
             }}
           >
@@ -484,7 +493,8 @@
               <img src={customFace} alt={`Cara ${value}`} className="w-full h-full object-cover rounded-lg" style={{ 
                 filter: 'drop-shadow(0 0 5px rgba(0,0,0,0.5))',
                 transform: rolling ? 'scale(0.5)' : 'scale(1)',
-                transition: `transform ${ROLL_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`
+                // CAMBIO (v4.36): Duración de animación (1500ms)
+                transition: `transform ${ROLL_DURATION}ms cubic-bezier(0.22, 1, 0.36, 1)`
               }} />
             ) : (
               <span className={`${isEmoji ? 'text-6xl' : `text-4xl font-bold ${showBaseDice ? 'text-black' : 'text-transparent'}`} text-center`}>
@@ -498,7 +508,8 @@
             className={`absolute -top-2 -right-2 bg-gray-900 text-white text-xs 
                         font-bold px-2 py-1 rounded-full shadow-lg transition-opacity
                         ${rolling ? 'opacity-0' : 'opacity-100'}`}
-            style={{ transitionDelay: rolling ? '0ms' : `${ROLL_DURATION - 500}ms` }}
+            // CAMBIO (v4.36): Retraso de aparición (1100ms)
+            style={{ transitionDelay: rolling ? '0ms' : `${ROLL_DURATION - 400}ms` }}
           >
             {type.replace('_1', '₁').replace('_2', '₂')}
           </span>
