@@ -67,6 +67,7 @@
      * a los 1100ms (ROLL_DURATION - 400ms) para coincidir con el último sonido.
      * 5.  INICIO FLUIDO: Se usa un `setTimeout(0)` (vía `isAnimating` state)
      * para asegurar que la animación no se "encasquille" al inicio.
+     * 6.  IMÁGENES ADAPTADAS: Se usa 'object-contain' para que las imágenes no se corten.
      *
      * Mantiene todas las características:
      * - Clonación Total, Personalización Limitada D12/D20, Colores variantes,
@@ -490,7 +491,8 @@
             style={resultStyle}
           >
             {isImage ? (
-              <img src={customFace} alt={`Cara ${value}`} className="w-full h-full object-cover rounded-lg" style={{ 
+              // CAMBIO (v4.36): Se aplica 'object-contain' para que la imagen no se corte
+              <img src={customFace} alt={`Cara ${value}`} className="w-full h-full object-contain rounded-lg" style={{ 
                 filter: 'drop-shadow(0 0 5px rgba(0,0,0,0.5))',
                 transform: rolling ? 'scale(0.5)' : 'scale(1)',
                 // CAMBIO (v4.36): Duración de animación (1500ms)
